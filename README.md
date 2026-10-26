@@ -1,6 +1,6 @@
 # Alex Aparece — Personal CV
 
-A professional, responsive personal CV for **Alex, Jr. A. Aparece**, **Fullstack Developer** and fourth-year BS Information Technology student at Davao del Norte State College. Seven distinct pages present his profile, education, skills, projects, experience, achievements, and contact information.
+A professional, responsive personal CV for **Alex, Jr. A. Aparece**, **Fullstack Developer** and fourth-year BS Information Technology student at Davao del Norte State College. Seven main pages present his profile, education, skills, projects, experience, achievements, and contact information. A separate CV page supports professional printing.
 
 **Live URL:** <https://personal-cv-two-lime.vercel.app>
 
@@ -55,11 +55,14 @@ The production configuration targets the live URL above, starts no local server,
 | `/experience` | Internship, project work, student leadership, volunteering, family farm support |
 | `/achievements` | Honest notice that detailed achievements and certificates are pending |
 | `/contact` | Native email/phone actions, location, four social profiles |
+| `/cv` | Professional CV preview with native printing and Save as PDF support |
 | Other paths | Not-found page with a working home link |
 
 Navigation changes pages. Each route updates its document title and announces its name. Client-side route changes focus the main content. The mobile menu supports keyboard access, Escape, route-change closing, and focus restoration when selecting the current route. A skip link, visible focus indicators, meaningful portrait alternative text, safe external links, and reduced-motion styles are included.
 
 The site stays dark regardless of the device’s color-scheme preference. Motion stops when reduced motion is enabled, including animations already running. Content remains readable when reveal APIs are unavailable. See [design and motion](docs/DESIGN.md) for the palette, behavior, and verification boundaries.
+
+**Print CV** appears alongside the Home introduction actions and beside the About heading. It opens `/cv` for review; **Print / Save as PDF** opens the browser’s print dialog. Choose A4 and disable browser headers/footers for a clean copy. The document uses white paper, dark text, text-based sections, verified profile details, and three selected projects, with the complete archive linked online. Missing employment/education dates are omitted. Print-only styling is removed when leaving the CV route; the main website stays dark.
 
 ## Folder ownership
 
@@ -70,7 +73,7 @@ src/
   components/ui/        Page headings and social links
   composables/          Mobile menu and route/focus behavior
   pages/
-    profile/            Home, About, Contact, typed profile, portrait component
+    profile/            Home, About, Contact, printable CV, typed profile data
     skills/             Typed skill groups and Skills page
     projects/           Typed projects, project cards, Projects page
     experience/         Typed experience data and Experience page

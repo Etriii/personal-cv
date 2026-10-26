@@ -20,6 +20,7 @@ export const router = createRouter({
     { path: '/experience', component: () => import('../pages/experience/Experience.vue'), meta: { title: 'Experience' } },
     { path: '/achievements', component: () => import('../pages/achievements/Achievements.vue'), meta: { title: 'Achievements' } },
     { path: '/contact', component: () => import('../pages/profile/Contact.vue'), meta: { title: 'Contact' } },
+    { path: '/cv', component: () => import('../pages/profile/PrintableCv.vue'), meta: { title: 'Printable CV' } },
     { path: '/:pathMatch(.*)*', component: () => import('../pages/NotFound.vue'), meta: { title: 'Page not found' } },
   ],
   scrollBehavior: (_to, _from, savedPosition) => savedPosition ?? { top: 0 },

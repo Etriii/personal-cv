@@ -2,11 +2,15 @@
 import ArrowIcon from '../../components/ui/ArrowIcon.vue'
 import PageHeading from '../../components/ui/PageHeading.vue'
 import { profile } from './data/profile'
+import PrintCvLink from './presentation/components/PrintCvLink.vue'
 </script>
 
 <template>
   <div>
-    <PageHeading eyebrow="A little about me" title="Curious by nature. A builder by choice." description="The person, interests, and education behind the work." />
+    <div class="about-heading">
+      <PageHeading eyebrow="A little about me" title="Curious by nature. A builder by choice." description="The person, interests, and education behind the work." />
+      <PrintCvLink />
+    </div>
     <div class="about-grid">
       <section class="prose" aria-labelledby="story-title">
         <h2 id="story-title">The person behind the work.</h2>

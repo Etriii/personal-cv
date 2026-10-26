@@ -240,6 +240,24 @@
   font-size: 0.95rem;
 }
 
+.about-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+}
+
+.about-heading .page-heading {
+  flex: 1 1 600px;
+  margin-bottom: 0;
+}
+
+.about-heading > .button {
+  margin-bottom: var(--space-4);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr;

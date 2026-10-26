@@ -2,6 +2,7 @@
 import { profile } from './data/profile'
 import ProfilePortrait from './presentation/components/ProfilePortrait.vue'
 import ArrowIcon from '../../components/ui/ArrowIcon.vue'
+import PrintCvLink from './presentation/components/PrintCvLink.vue'
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import ArrowIcon from '../../components/ui/ArrowIcon.vue'
         <div class="actions">
           <RouterLink class="button button-primary" to="/projects">Explore my work <ArrowIcon /></RouterLink>
           <RouterLink class="button button-secondary" to="/contact">Let’s talk <ArrowIcon /></RouterLink>
+          <PrintCvLink />
         </div>
         <p class="hero-note">Learning through building. Growing through collaboration.</p>
       </div>
