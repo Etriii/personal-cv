@@ -30,7 +30,7 @@ test('portrait resolves and has a stable fallback when unavailable', async ({ pa
   await page.goto('/')
   const portrait = page.getByRole('img', { name: /Portrait of Alex/ })
   await expect(portrait).toBeVisible()
-  expect(await portrait.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true)
+  await expect.poll(() => portrait.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true)
   await page.route('**/assets/profile-*.png', (route) => route.abort())
   await page.reload()
   await expect(page.getByRole('img', { name: /portrait unavailable/ })).toBeVisible()
@@ -126,6 +126,7 @@ for (const width of [360, 768, 1024, 1440]) {
       }))
       expect(dimensions.content, route.path).toBeLessThanOrEqual(dimensions.viewport)
       if (route.path === '/') {
+        await page.getByRole('img', { name: /Portrait of Alex/ }).evaluate((image: HTMLImageElement) => image.decode())
         await page.screenshot({ path: testInfo.outputPath(`home-${width}.png`), fullPage: true, animations: 'disabled' })
       }
       if (route.path === '/projects' && [360, 1440].includes(width)) {

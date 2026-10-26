@@ -2,9 +2,9 @@
 
 A professional, responsive personal CV for **Alex, Jr. A. Aparece**, **Fullstack Developer** and fourth-year BS Information Technology student at Davao del Norte State College. Seven distinct pages present his profile, education, skills, projects, experience, achievements, and contact information.
 
-**Live URL:** Pending Phase 2 — not deployed.
+**Live URL:** <https://personal-cv-two-lime.vercel.app>
 
-**CV repository:** [Etriii/personal-cv](https://github.com/Etriii/personal-cv) is the currently configured `origin`. The remote appeared during local implementation and was preserved. Phase 1 did not create it, configure it, or push to it. Check its contents and history before publication in Phase 2.
+**CV repository:** <https://github.com/Etriii/personal-cv>. The dedicated public repository contains the genuine implementation milestones. Its existing Vercel integration publishes the `main` branch.
 
 ## Stack and requirements
 
@@ -35,6 +35,14 @@ npm run test:e2e
 ```
 
 Playwright starts and stops a production preview at `http://127.0.0.1:4173`. Port 4173 must be free. The configuration selects the installed Microsoft Edge browser; no downloaded Playwright browser is required. Screenshots and failure traces are written under ignored `test-results/`.
+
+Check the actual public deployment with the same browser suite:
+
+```sh
+npm run test:live
+```
+
+The production configuration targets the live URL above, starts no local server, and writes screenshots and failure traces under `test-results/live/`. Image checks and screenshot capture wait for the portrait to finish loading and decoding.
 
 ## Routes and behavior
 
@@ -69,7 +77,7 @@ src/
   assets/images/        Bundled supplied portrait
   styles/               Design tokens, shared shell, page layouts
 tests/                  Production-browser behavior and responsive checks
-docs/                   Original plan, content sources, Phase 1 evidence
+docs/                   Original plan, content sources, phase evidence
 ```
 
 Feature `domain/entities` modules define framework-independent types; `data` modules export typed static content. Pages compose presentational components. Composables own stateful behavior. No shared store is needed for this static site. Edit profile facts in `src/pages/profile/data/profile.ts`, not in templates. Project, skill, and experience modules follow the same ownership pattern.
@@ -78,15 +86,19 @@ Feature `domain/entities` modules define framework-independent types; `data` mod
 
 See [content sources](docs/CONTENT_SOURCES.md) for the verified repositories and evidence boundaries. The supplied email spelling `alexarnaizapece@gmail.com` is preserved exactly. Experience and academic highlights are self-reported. Missing dates, event names, certificate details, and individual project contribution details remain explicitly unclaimed. Project illustrations are placeholders, not screenshots.
 
-See [Phase 1 verification](docs/PHASE_1.md) for actual check results and remaining proof. The [original implementation plan](docs/IMPLEMENTATION_PLAN.md) is preserved as a historical input; its pre-implementation status is not the current progress record.
+See [Phase 2 verification](docs/PHASE_2.md) for public deployment evidence and the nine rubric checks. [Phase 1 verification](docs/PHASE_1.md) records the earlier local-only milestone. The [original implementation plan](docs/IMPLEMENTATION_PLAN.md) is preserved as a historical input; its pre-implementation status is not the current progress record.
 
-## Vercel deployment — Phase 2 only
+## Vercel deployment
 
-1. Recheck the existing `origin` and inspect the remote repository’s contents and history before publication. Preserve any independent remote work. Push only after Phase 2 authorization.
-2. Import that repository into Vercel with the **Vite** framework preset and this directory as the project root.
-3. Use `npm run build` and the `dist` output directory. Select a Node version compatible with the requirement above; Node 24 matches the local build.
-4. No environment variables are needed. The committed `vercel.json` supplies the SPA fallback for direct nested-route visits and refreshes.
-5. Verify the actual public home page, every route, nested-route reloads, images, and keyboard/mobile navigation. Local preview success does not prove the Vercel rewrite.
-6. Replace the pending live URL above with the real URL, commit and push the documentation, and verify the resulting final deployment.
+The existing Vercel project `personal-cv` is connected to this GitHub repository. Phase 2 reused that integration and preserved its project configuration. No duplicate project or deployment account was created.
 
-Phase 1 does not create or modify a remote repository, push commits, or deploy anything.
+The committed `vercel.json` declares `npm run build`, the `dist` output directory, and the SPA fallback. Direct visits and refreshes of nested routes were verified on the public domain. No environment variables are required. Node 24 matches the local build; the supported Node range is declared in `package.json`.
+
+For future updates:
+
+1. Run the type check, production build, and local browser suite.
+2. Commit the verified changes and push to `main`, preserving independent remote work.
+3. Wait for the pushed commit’s Vercel status to report success.
+4. Run `npm run test:live` and check that the deployed assets match the intended build.
+
+For a fresh Vercel project, select the **Vite** preset, repository-root directory, `npm run build`, and `dist`. Use a compatible Node version. The existing deployment does not require re-importing the repository.

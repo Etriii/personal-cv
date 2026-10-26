@@ -2,6 +2,8 @@
 
 Status: Phase 1 complete. Phase 2 publication is not started.
 
+This is the historical local-only milestone record. See [Phase 2 verification](PHASE_2.md) for the later public release and current publication evidence.
+
 ## Delivered
 
 Seven distinct Vue Router pages, route titles, a not-found recovery page, typed static profile/project/skill/experience modules, the supplied local portrait with an accessible failure state, a shared shell, responsive navigation, keyboard focus management, reduced-motion support, safe external links, project placeholders, and a Vercel SPA rewrite.
