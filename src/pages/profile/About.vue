@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ArrowIcon from '../../components/ui/ArrowIcon.vue'
 import PageHeading from '../../components/ui/PageHeading.vue'
 import { profile } from './data/profile'
 </script>
@@ -16,7 +17,7 @@ import { profile } from './data/profile'
           <li v-for="interest in profile.interests" :key="interest">{{ interest }}</li>
         </ul>
       </section>
-      <aside class="info-panel" aria-label="Basic information">
+      <aside class="info-panel" aria-label="Basic information" data-reveal>
         <p class="eyebrow">At a glance</p>
         <dl class="detail-list">
           <div><dt>Name</dt><dd>{{ profile.name }}</dd></div>
@@ -25,7 +26,7 @@ import { profile } from './data/profile'
         </dl>
       </aside>
     </div>
-    <section class="education-section" aria-labelledby="education-title">
+    <section class="education-section" aria-labelledby="education-title" data-reveal>
       <div>
         <p class="eyebrow">Education</p>
         <h2 id="education-title">{{ profile.education.school }}</h2>
@@ -38,7 +39,7 @@ import { profile } from './data/profile'
         <ul class="highlight-list">
           <li v-for="highlight in profile.academicHighlights" :key="highlight">{{ highlight }}</li>
         </ul>
-        <RouterLink class="text-link" to="/achievements">Certificate updates <span aria-hidden="true">↗</span></RouterLink>
+        <RouterLink class="text-link" to="/achievements">Certificate updates <ArrowIcon /></RouterLink>
       </div>
     </section>
   </div>

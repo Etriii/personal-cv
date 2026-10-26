@@ -8,7 +8,7 @@ A professional, responsive personal CV for **Alex, Jr. A. Aparece**, **Fullstack
 
 ## Stack and requirements
 
-Vue 3, TypeScript, Vite, and Vue Router with HTML5 history. CSS uses system fonts and a shared warm off-white, ink, and deep teal palette. Playwright is a development dependency for browser verification; it is not shipped in the application.
+Vue 3, TypeScript, Vite, and Vue Router with HTML5 history. The dark design uses system fonts, charcoal surfaces, mint accents, and a monochrome portrait treatment. Native CSS and browser APIs provide finite entrance animations, scroll reveals, and hover feedback. Playwright is a development dependency for browser verification; it is not shipped in the application.
 
 Use Node.js `^20.19.0 || >=22.12.0` and npm. Local implementation used Node.js 24.19.0 and npm 11.17.0. No backend, database, runtime GitHub requests, environment variables, or secrets are required.
 
@@ -58,6 +58,8 @@ The production configuration targets the live URL above, starts no local server,
 | Other paths | Not-found page with a working home link |
 
 Navigation changes pages. Each route updates its document title and announces its name. Client-side route changes focus the main content. The mobile menu supports keyboard access, Escape, route-change closing, and focus restoration when selecting the current route. A skip link, visible focus indicators, meaningful portrait alternative text, safe external links, and reduced-motion styles are included.
+
+The site stays dark regardless of the device’s color-scheme preference. Motion stops when reduced motion is enabled, including animations already running. Content remains readable when reveal APIs are unavailable. See [design and motion](docs/DESIGN.md) for the palette, behavior, and verification boundaries.
 
 ## Folder ownership
 

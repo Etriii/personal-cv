@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import type { Project } from '../../domain/entities/project'
+import ArrowIcon from '../../../../components/ui/ArrowIcon.vue'
 
 defineProps<{ project: Project; index: number }>()
 </script>
 
 <template>
-  <article class="project-card">
+  <article class="project-card" data-reveal>
     <div :class="['project-placeholder', `placeholder-${project.visual}`]">
       <div class="placeholder-drawing" aria-hidden="true">
         <span class="placeholder-symbol">{{ project.visual === 'ocean' ? '≈' : project.visual === 'tools' ? '{ }' : '[ ]' }}</span>
@@ -24,7 +25,7 @@ defineProps<{ project: Project; index: number }>()
       </ul>
       <p class="contribution">{{ project.contribution }}</p>
       <a class="text-link" :href="project.repositoryUrl" target="_blank" rel="noopener noreferrer">
-        View repository <span aria-hidden="true">↗</span>
+        View repository <ArrowIcon />
         <span class="sr-only"> (opens in a new tab)</span>
       </a>
     </div>

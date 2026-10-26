@@ -7,7 +7,7 @@ import { experiences } from './data/experience'
   <div>
     <PageHeading eyebrow="Experience & leadership" title="Growing through real work." description="Learning through projects, helping others, and taking responsibility. Every experience shapes how I build." />
     <div class="experience-list">
-      <article v-for="(experience, index) in experiences" :key="experience.title" class="experience-row">
+      <article v-for="(experience, index) in experiences" :key="experience.title" class="experience-row" data-reveal>
         <div class="experience-category">
           <span class="row-number" aria-hidden="true">0{{ index + 1 }}</span>
           <span>{{ experience.category }}</span>
