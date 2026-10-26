@@ -1,0 +1,25 @@
+{
+  "name": "alex-aparece-cv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "^20.19.0 || >=22.12.0" },
+  "scripts": {
+    "dev": "vite",
+    "type-check": "vue-tsc --noEmit",
+    "build": "npm run type-check && vite build",
+    "preview": "vite preview",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "vue": "^3.5.44",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vue-tsc": "^3.3.13"
+  }
+}
