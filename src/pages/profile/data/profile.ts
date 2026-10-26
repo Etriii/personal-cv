@@ -2,6 +2,7 @@ import type { Profile } from '../domain/entities/profile'
 
 export const profile: Profile = {
   name: 'Alex, Jr. A. Aparece',
+  shortName: 'Alex Aparece',
   title: 'Fullstack Developer',
   introduction: "I'm a fourth-year BS Information Technology student at Davao del Norte State College. I build full-stack applications, solve programming problems, and contribute to projects that connect useful ideas with working software.",
   objective: 'To grow as a full-stack developer by building reliable software, contributing to a strong engineering team, and creating lasting financial stability for my family.',

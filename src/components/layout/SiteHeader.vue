@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { navigation } from '../../app/router'
+import { profile } from '../../pages/profile/data/profile'
 import { useMobileNavigation } from '../../composables/useMobileNavigation'
 
 const { isOpen, onNavigate } = useMobileNavigation()
@@ -8,9 +9,9 @@ const { isOpen, onNavigate } = useMobileNavigation()
 <template>
   <header class="site-header">
     <div class="container header-inner">
-      <RouterLink to="/" class="brand" aria-label="Alex Aparece, home" @click="onNavigate('/')">
+      <RouterLink to="/" class="brand" :aria-label="`${profile.shortName}, home`" @click="onNavigate('/')">
         <span class="brand-mark" aria-hidden="true">a.</span>
-        <span>Alex Aparece<span class="brand-caption">Developer &amp; problem solver</span></span>
+        <span>{{ profile.shortName }}<span class="brand-caption">Developer &amp; problem solver</span></span>
       </RouterLink>
       <button
         ref="menuToggle"
