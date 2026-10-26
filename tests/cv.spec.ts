@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { projects } from '../src/pages/projects/data/projects'
 
 const routes = [
   { path: '/', title: 'Home', heading: 'Alex, Jr.' },
@@ -100,9 +101,9 @@ test('contact actions and external links have real, safe destinations', async ({
     }
   }
   await page.goto('/projects')
-  await expect(page.getByRole('article')).toHaveCount(3)
-  await expect(page.getByText('Screenshot coming soon', { exact: true })).toHaveCount(3)
-  await expect(page.getByRole('link', { name: /View repository/ })).toHaveCount(3)
+  await expect(page.getByRole('article')).toHaveCount(projects.length)
+  await expect(page.getByText('Screenshot coming soon', { exact: true })).toHaveCount(projects.length)
+  await expect(page.getByRole('link', { name: /View repository/ })).toHaveCount(projects.filter((project) => project.repositoryUrl).length)
 })
 
 test('unknown paths offer a working home recovery link', async ({ page }) => {
@@ -142,7 +143,7 @@ test('reduced motion disables page animation without hiding content', async ({ p
   expect(await page.locator('.page-enter').evaluate((element) => getComputedStyle(element).animationName)).toBe('none')
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   await page.getByRole('link', { name: 'Explore my work' }).click()
-  await expect(page.getByRole('article')).toHaveCount(3)
+  await expect(page.getByRole('article')).toHaveCount(projects.length)
   expect(await page.locator('.project-card').first().evaluate((element) => getComputedStyle(element).transitionDuration)).toBe('0s')
 })
 

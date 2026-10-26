@@ -51,7 +51,7 @@ The production configuration targets the live URL above, starts no local server,
 | `/` | Introduction, objective, portrait, education, project/contact links |
 | `/about` | Personal description, interests, education, academic highlights |
 | `/skills` | Technology groups with public project evidence |
-| `/projects` | Three verified public projects and labeled screenshot placeholders |
+| `/projects` | 31 projects from the local collection and public repositories, with side-project badges and labeled screenshot placeholders |
 | `/experience` | Internship, project work, student leadership, volunteering, family farm support |
 | `/achievements` | Honest notice that detailed achievements and certificates are pending |
 | `/contact` | Native email/phone actions, location, four social profiles |
@@ -87,6 +87,8 @@ Feature `domain/entities` modules define framework-independent types; `data` mod
 ## Content and limitations
 
 See [content sources](docs/CONTENT_SOURCES.md) for the verified repositories and evidence boundaries. The supplied email spelling `alexarnaizapece@gmail.com` is preserved exactly. Experience and academic highlights are self-reported. Missing dates, event names, certificate details, and individual project contribution details remain explicitly unclaimed. Project illustrations are placeholders, not screenshots.
+
+The project archive includes systems, developer tools, academic work, and side projects. Related frontend/backend clients and duplicate checkouts are grouped under one project. Side projects carry a visible badge. Source links appear only for verified public repositories; other cards state that the source is not publicly linked.
 
 See [Phase 2 verification](docs/PHASE_2.md) for public deployment evidence and the nine rubric checks. [Phase 1 verification](docs/PHASE_1.md) records the earlier local-only milestone. The [original implementation plan](docs/IMPLEMENTATION_PLAN.md) is preserved as a historical input; its pre-implementation status is not the current progress record.
 

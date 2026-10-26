@@ -33,7 +33,7 @@ Content is visible by default. Missing browser reveal APIs leave it readable and
 
 ## Verification
 
-The production browser suite contains 22 checks: the existing 18 route/interaction/responsive checks plus dark contrast with both system color preferences, first-load scroll reveal and live reduced-motion changes, and navigation without reveal APIs. Target widths remain 360, 768, 1024, and 1440 CSS pixels.
+The design refresh added four checks to the original 18: dark contrast with both system color preferences, first-load scroll reveal and live reduced-motion changes, and navigation without reveal APIs. The shared suite also covers later content expansions. Target widths remain 360, 768, 1024, and 1440 CSS pixels.
 
 Local verification on 2026-10-26: `npm run type-check` and `npm run build` passed; `npm run test:e2e` passed all 22 checks in 26.8 seconds. Desktop/mobile Home and Projects screenshots were visually inspected before publication.
 

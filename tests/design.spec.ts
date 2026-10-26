@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { projects } from '../src/pages/projects/data/projects'
 
 function luminance(color: string) {
   const channels = color.startsWith('#')
@@ -57,7 +58,7 @@ test('initial home scroll reveals stop when reduced motion is enabled', async ({
   await expect.poll(() => page.evaluate(() => document.getAnimations().filter((animation) => animation.playState === 'running').length)).toBe(0)
   await expect(detail).toBeVisible()
   await page.goto('/projects')
-  await expect(page.getByRole('article')).toHaveCount(3)
+  await expect(page.getByRole('article')).toHaveCount(projects.length)
   expect(await page.evaluate(() => document.getAnimations().length)).toBe(0)
 })
 
@@ -69,7 +70,7 @@ test('content and route navigation work without reveal browser APIs', async ({ p
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))
   await page.goto('/projects')
-  await expect(page.getByRole('article')).toHaveCount(3)
+  await expect(page.getByRole('article')).toHaveCount(projects.length)
   await expect(page.getByRole('article').first()).toBeVisible()
   await page.getByRole('navigation').getByRole('link', { name: 'Contact' }).click()
   await expect(page.locator('#main-content')).toBeFocused()
